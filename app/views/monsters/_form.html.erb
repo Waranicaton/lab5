@@ -2,7 +2,8 @@
   <%= form.text_area :name, placeholder: "Nombre", size: "30x1" %>
   <%= form.text_area :description, placeholder: "Breve descripción", size: "30x3" %>
   <%= form.text_field :phone, placeholder: "Número de telefono" %>
-  <%= form.date_field :birthdate_at %>
+  <%= form.date_field :birthdate %>
   <br><br>
+
   <div class="centrado"><%= form.submit "Crear Monstruo", class: "btn btn-primary mb-2" %></div>
 <% end %>
