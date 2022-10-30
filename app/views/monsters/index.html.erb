@@ -1,1 +1,13 @@
-<%# Update me %><%= @monsters.inspect %>
+<%# Update me %>
+<% @monsters.each do |monster| %>
+    <p class="sin_salto">Nombre: </p>
+    <% if Tweet.where(monster_id: monster.id).size >1 %>
+        <%= link_to monster.name, monster %>
+        <br>
+        <p class="red">Tuitero Destacado</p>
+    <% else %>
+        <%= link_to monster.name, new_tweet_path %>
+    <% end %>
+    <br>
+    <br>
+<% end %>

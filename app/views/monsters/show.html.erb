@@ -1,1 +1,13 @@
-<%# Update me %><%= @monster.inspect %>
+<%# Update me %>
+<table>
+  <td>
+    <p>Nombre: <%= @monster.name %></p>  
+    <p>Descripción: <%= @monster.description %></p>
+    <%= button_to "Eliminar", @monster, method: :delete, class: "red" %>
+  </td>
+  <td>
+    <% Tweet.where(monster_id:@monster.id).each do |tweet| %>
+      <%= tweet.content %>
+    <% end %>
+  </td>
+</table>
